@@ -16,7 +16,7 @@ const FormLogin: NextPage = () => {
   const { onChange, onSubmit, values } = useForm(iniciarSesion, credenciales);
 
   async function iniciarSesion() {
-    console.log("iniciar sesion");
+    console.log("iniciar sesión");
 
     console.log(values);
   }
