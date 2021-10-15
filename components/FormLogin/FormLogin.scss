@@ -1,0 +1,76 @@
+.container-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30vh auto;
+  grid-template-areas:
+    "encabezados"
+    "formulario";
+}
+
+.encabezados {
+  display: grid;
+  grid-area: encabezados;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "bienvenido"
+    "ingrese-credenciales";
+}
+
+.bienvenido {
+  padding: 0;
+  display: grid;
+  font-weight: bold;
+  grid-area: bienvenido;
+  font-size: 50px;
+  color: $color-black-1;
+}
+
+.ingrese-credenciales {
+  display: grid;
+  padding: 0;
+  font-weight: regular;
+  grid-area: ingrese-credenciales;
+  font-size: 20px;
+  color: $color-black-2;
+}
+
+.formulario {
+  display: grid;
+  grid-area: formulario;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.label-login {
+  font-size: 18px;
+  color: $color-black-2;
+}
+
+.input-login {
+  padding: 2px 20px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid $color-black-2;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.container-btn-iniciar {
+  justify-self: center;
+  align-self: center;
+}
+
+.btn-iniciar {
+  background-color: $color-black-1;
+  padding: 15px 200px;
+  color: $color-white-1;
+  font-size: 20px;
+}

@@ -1,0 +1,16 @@
+.container-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'background-login form-login';
+}
+
+
+.background-login {
+    grid-area: background-login;
+    background-image: linear-gradient(rgba(54, 54, 54, 0.753),rgba(46, 45, 45, 0.021)), url('https://control-pedidos.s3.us-east-2.amazonaws.com/login/login.jpg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) calc(100%); 
+    background-size: cover;
+    height: 100vh;
+}
+
