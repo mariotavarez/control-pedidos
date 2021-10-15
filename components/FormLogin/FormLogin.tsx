@@ -4,6 +4,8 @@ import { LoginModel } from "../../models/Login/login.model";
 // Hooks
 import { useForm } from "../../hooks/useForm";
 
+import useSWR from "swr";
+
 const FormLogin: NextPage = () => {
   // Credenciales del usuario
   const credenciales: LoginModel = {
@@ -15,6 +17,7 @@ const FormLogin: NextPage = () => {
 
   async function iniciarSesion() {
     console.log("iniciar sesion");
+
     console.log(values);
   }
 
