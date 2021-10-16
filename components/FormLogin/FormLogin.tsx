@@ -64,7 +64,7 @@ const FormLogin: NextPage = () => {
               name="correo"
               className="input-login"
               type="email"
-              maxLength="100"
+              maxLength={100}
               onChange={onChange}
             />
           </div>
@@ -79,7 +79,7 @@ const FormLogin: NextPage = () => {
               name="password"
               className="input-login"
               type="password"
-              maxLength="15"
+              maxLength={15}
               onChange={onChange}
             />
           </div>
