@@ -1,9 +1,9 @@
 // React
 import { useState } from "react";
 
-export const useForm = (callback: any, initialState: any = {}) => {
+export const useForm = (callback: any, initialState = {}) => {
   // useState para almacenar los datos del formulario
-  const [values, setValues] = useState(initialState);
+  const [values, setValues]: any = useState(initialState);
 
   // onChange event
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {

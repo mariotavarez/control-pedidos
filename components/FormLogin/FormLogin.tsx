@@ -1,24 +1,46 @@
+// Next
 import type { NextPage } from "next";
+import Router from "next/router";
 // Models
 import { LoginModel } from "../../models/Login/login.model";
 // Hooks
 import { useForm } from "../../hooks/useForm";
-
-import useSWR from "swr";
+// Request
+import { iniciarSesionRequest } from "../../request/Login/Login.request";
+// SweetAlert
+import Swal from "sweetalert2";
+// Credenciales del usuario
+const credenciales: LoginModel = {
+  correo: "",
+  password: "",
+};
 
 const FormLogin: NextPage = () => {
-  // Credenciales del usuario
-  const credenciales: LoginModel = {
-    usuario: "null",
-    contrasena: "null",
-  };
-
   const { onChange, onSubmit, values } = useForm(iniciarSesion, credenciales);
 
+  /**
+   * @author Mario Tavarez
+   * @date 15/10/2021
+   * @description Inicia sesion validando que el correo y password sean correctos
+   * @returns
+   */
   async function iniciarSesion() {
-    console.log("iniciar sesión");
-
-    console.log(values);
+    // Solo si el usuario ha ingresado sus credenciales
+    if (values.correo !== "" && values.password !== "") {
+      const responseInicioSesion = await iniciarSesionRequest(values);
+      // Valida que se haya iniciado sesion correctamente
+      if (responseInicioSesion.status === "OK") {
+        return Router.replace("/dashboard");
+      } else {
+        Swal.fire({
+          title: "Credenciales incorrectas",
+          text: responseInicioSesion.message,
+          icon: "info",
+          confirmButtonText: "Aceptar",
+          timer: 7000,
+        });
+      }
+    }
   }
 
   return (
@@ -32,30 +54,32 @@ const FormLogin: NextPage = () => {
         {/* ENCABEZADOS */}
         {/* FORMULARIO */}
         <form className="formulario" onSubmit={onSubmit}>
-          {/* USUARIO */}
+          {/* CORREO */}
           <div className="form-group">
-            <label className="label-login" htmlFor="usuario">
-              Usuario
+            <label className="label-login" htmlFor="correo">
+              Correo
             </label>
             <input
-              id="usuario"
-              name="usuario"
+              id="correo"
+              name="correo"
               className="input-login"
-              type="text"
+              type="email"
+              maxLength="100"
               onChange={onChange}
             />
           </div>
-          {/* USUARIO */}
+          {/* CORREO */}
           {/* CONTRASEÑA */}
           <div className="form-group">
-            <label className="label-login" htmlFor="contrasena">
+            <label className="label-login" htmlFor="password">
               Contraseña
             </label>
             <input
-              id="contrasena"
-              name="contrasena"
+              id="password"
+              name="password"
               className="input-login"
               type="password"
+              maxLength="15"
               onChange={onChange}
             />
           </div>

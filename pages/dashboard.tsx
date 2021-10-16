@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
+// Head
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.scss";
-import Login from "../components/Login";
+// Layout
+import Sidebar from "../layouts/Sidebar/index";
 
-const Home: NextPage = () => {
+const Dashboard: NextPage = () => {
   return (
     <div className="main">
       <Head>
-        <title>FLYZZ - Control de pedidos</title>
+        <title>Dashboard MVP</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="stylesheet"
@@ -18,9 +18,9 @@ const Home: NextPage = () => {
           referrerpolicy="no-referrer"
         />
       </Head>
-      <Login />
+      <Sidebar />
     </div>
   );
 };
 
-export default Home;
+export default Dashboard;
