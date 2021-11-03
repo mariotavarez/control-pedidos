@@ -47,6 +47,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
+  margin: 20px;
 }
 
 .label-login {
@@ -73,4 +74,44 @@
   padding: 15px 200px;
   color: $color-white-1;
   font-size: 20px;
+}
+.btn-iniciar:hover {
+  background-color: $color-black-2;
+}
+
+@media screen and (max-width: 800px) {
+  .container-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30vh auto;
+    grid-template-areas:
+      "encabezados"
+      "formulario";
+  }
+
+  .encabezados {
+    display: grid;
+    grid-area: encabezados;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bienvenido"
+      "ingrese-credenciales";
+    padding: 5px;
+    justify-items: center;
+  }
+  .bienvenido {
+    padding: 0;
+    display: grid;
+    font-weight: bold;
+    grid-area: bienvenido;
+    font-size: 40px;
+    color: $color-black-1;
+  }
+  .form-group {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
 }

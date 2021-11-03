@@ -1,5 +1,6 @@
-// Models
+// Constants
 import { URL } from "../../config/constants.config";
+// Models
 import { LoginModel } from "../../models/Login/login.model";
 
 export const iniciarSesionRequest = async (credenciales: LoginModel) => {

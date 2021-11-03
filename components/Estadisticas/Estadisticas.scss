@@ -1,0 +1,40 @@
+.container-estadisticas {
+  display: grid;
+  height: 10vh;
+  background-color: $color-white-1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "numeros-estadisticas";
+}
+
+.numeros-estadisticas {
+  display: grid;
+  grid-area: numeros-estadisticas;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "total-pedidos pedidos-espera pedidos-atendidos";
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.total-pedidos {
+  display: grid;
+  grid-area: total-pedidos;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+}
+
+.pedidos-espera {
+  display: grid;
+  grid-area: pedidos-espera;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+}
+
+.pedidos-atendidos {
+  display: grid;
+  grid-area: pedidos-atendidos;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr;
+}

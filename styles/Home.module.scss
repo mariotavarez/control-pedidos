@@ -1,4 +1,134 @@
-.main{
-    background-color: red;
-    color: red;
+.container-dashboard {
+  background-color: $color-white-2;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 8vh 1fr;
+  grid-template-areas:
+    "sidebar navbar-dashboard"
+    "sidebar dashboard";
+}
+
+.container-listado-pedidos {
+  background-color: $color-white-2;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 8vh 1fr;
+  grid-template-areas:
+    "sidebar-pedidos navbar-dashboard-pedidos"
+    "sidebar-pedidos dashboard-pedidos";
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  display: grid;
+  grid-area: sidebar;
+}
+.sidebar-pedidos {
+  display: grid;
+  grid-area: sidebar-pedidos;
+}
+
+.navbar-dashboard {
+  display: grid;
+  grid-area: navbar-dashboard;
+}
+.navbar-dashboard-pedidos {
+  display: grid;
+  grid-area: navbar-dashboard-pedidos;
+}
+
+.dashboard {
+  display: grid;
+  grid-area: dashboard;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  grid-template-rows: 30px 15vh auto auto;
+  grid-template-areas:
+    ". ."
+    "estadisticas estadisticas"
+    "usuarios-registrados pedidos"
+    "comentarios comentarios";
+
+  height: 100%;
+  padding: 0 40px 0 40px;
+}
+
+.dashboard-pedidos {
+  display: grid;
+  grid-area: dashboard-pedidos;
+  grid-template-columns: 1fr;
+  column-gap: 20px;
+  grid-template-rows: 30px 15vh auto;
+  grid-template-areas:
+    ". ."
+    "estadisticas estadisticas"
+    "listado-pedidos listado-pedidos";
+
+  height: 100%;
+  padding: 0 40px 0 40px;
+}
+
+.estadisticas {
+  grid-area: estadisticas;
+  display: grid;
+}
+
+.usuarios-registrados {
+  grid-area: usuarios-registrados;
+  display: grid;
+}
+
+.listado-pedidos {
+  grid-area: listado-pedidos;
+  display: grid;
+}
+
+.pedidos {
+  grid-area: pedidos;
+  display: grid;
+}
+
+.comentarios {
+  grid-area: comentarios;
+  display: grid;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: scroll;
+  width: 100%;
+}
+
+tr {
+  text-align: center;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: $color-black-2;
+  color: $color-white-1;
+}
+
+a {
+  color: $color-white-1;
+  text-decoration: none;
+}
+a:hover {
+  color: $color-yellow-1;
 }

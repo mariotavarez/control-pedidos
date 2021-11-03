@@ -30,6 +30,18 @@ const FormLogin: NextPage = () => {
       const responseInicioSesion = await iniciarSesionRequest(values);
       // Valida que se haya iniciado sesion correctamente
       if (responseInicioSesion.status === "OK") {
+        // Nombre
+        localStorage.setItem(
+          "nombre",
+          `${responseInicioSesion.informacionUsuario.nombre} ${responseInicioSesion.informacionUsuario.apellidoPaterno}`
+        );
+        // Imagen
+        localStorage.setItem(
+          "imagen",
+          responseInicioSesion.informacionUsuario.imagen
+        );
+        // Token
+        localStorage.setItem("token", responseInicioSesion.token);
         return Router.replace("/dashboard");
       } else {
         Swal.fire({

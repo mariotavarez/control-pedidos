@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+// Link
+import Link from "next/link";
 
 const SidebarComponent: NextPage = () => {
   return (
@@ -10,7 +12,11 @@ const SidebarComponent: NextPage = () => {
             <p>
               <i className="fa fa-home" aria-hidden="true"></i>
             </p>
-            <p>Inicio</p>
+            <Link href="/dashboard">
+              <p>
+                <a>Inicio</a>
+              </p>
+            </Link>
           </div>
           {/* HOME */}
           {/* PEDIDOS */}
@@ -18,7 +24,11 @@ const SidebarComponent: NextPage = () => {
             <p>
               <i className="fa fa-list" aria-hidden="true"></i>
             </p>
-            <p>Pedidos</p>
+            <Link href="/pedidos">
+              <p>
+                <a>Pedidos</a>
+              </p>
+            </Link>
           </div>
           {/* PEDIDOS */}
         </div>

@@ -1,0 +1,5 @@
+.container-puntuacion {
+  display: grid;
+  grid-template-columns: repeat(5, 30px);
+  grid-template-rows: 1fr;
+}

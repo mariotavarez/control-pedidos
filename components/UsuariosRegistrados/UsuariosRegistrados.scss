@@ -1,0 +1,26 @@
+.usuarios-registrados-container {
+  display: grid;
+  height: 30vh;
+  background-color: $color-white-1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "numero-usuarios-registrados";
+}
+
+.numero-usuarios-registrados {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    ". titulo-usuarios-registrados"
+    ". table-usuarios-registrados";
+}
+
+.titulo-usuarios-registrados {
+  grid-area: titulo-usuarios-registrados;
+  font-size: 25px;
+}
+
+.table-usuarios-registrados {
+  grid-area: table-usuarios-registrados;
+}

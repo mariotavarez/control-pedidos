@@ -1,0 +1,26 @@
+.pedidos-container {
+  display: grid;
+  height: 30vh;
+  background-color: $color-white-1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "numero-pedidos";
+}
+
+.numero-pedidos {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    ". titulo-pedidos"
+    ". table-pedidos";
+}
+
+.titulo-pedidos {
+  grid-area: titulo-pedidos;
+  font-size: 25px;
+}
+
+.table-pedidos {
+  grid-area: table-pedidos;
+}

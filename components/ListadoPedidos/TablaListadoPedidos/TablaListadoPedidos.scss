@@ -1,0 +1,14 @@
+.table-responsive-listado-pedidos {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-width: 1200px;
+  max-height: 700px;
+}
+
+.container-btn-pedidos {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}

@@ -1,0 +1,26 @@
+.comentarios-container {
+  display: grid;
+  height: 30vh;
+  background-color: $color-white-1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "numero-comentarios";
+}
+
+.numero-comentarios {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    ". titulo-comentarios"
+    ". table-comentarios";
+}
+
+.titulo-comentarios {
+  grid-area: titulo-comentarios;
+  font-size: 25px;
+}
+
+.table-comentarios {
+  grid-area: table-comentarios;
+}

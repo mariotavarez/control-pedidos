@@ -8,3 +8,35 @@
 @import "../components/FormLogin/FormLogin.scss";
 // Sidebar
 @import "../layouts/Sidebar/Sidebar.scss";
+// Navbar
+@import "../layouts/Navbar/Navbar.scss";
+// Home Module
+@import "./Home.module.scss";
+// Estadisticas
+@import "../components/Estadisticas/Estadisticas.scss";
+// Comentarios
+@import "../components/Comentarios/Comentarios.scss";
+// Pedidos
+@import "../components/Pedidos/Pedidos.scss";
+// Usuarios Registrados
+@import "../components/UsuariosRegistrados/UsuariosRegistrados.scss";
+// Tabla Usuarios
+@import "../components/UsuariosRegistrados/TablaUsuarios/TablaUsuarios.scss";
+// Tabla Pedidos
+@import "../components/Pedidos/TablaPedidos/TablaPedidos.scss";
+// Tabla Comentarios
+@import "../components/Comentarios/TablaComentarios/TablaComentarios.scss";
+// Puntuacion
+@import "../components/Puntuacion/Puntuacion.scss";
+// Detalle Pedidos
+@import "../components/DetallePedidos/DetallePedidos.scss";
+// Detalle Comentarios
+@import "../components/DetalleComentarios/DetalleComentarios.scss";
+// Listado Pedidos
+@import "../components/ListadoPedidos/ListadoPedidos.scss";
+// Tabla Listado Pedidos
+@import "../components/ListadoPedidos/TablaListadoPedidos/TablaListadoPedidos.scss";
+// Ruta Pedido
+@import "../components/RutaPedido/RutaPedido.scss";
+// Estatus Pedido
+@import "../components/EstatusPedido/EstatusPedido.scss";
