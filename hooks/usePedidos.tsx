@@ -9,7 +9,10 @@ import { PedidosModel } from "../models/Pedidos/pedidos.model";
 const usePedidos = (API: string) => {
   const [pedidos, setPedidos] = useState<PedidosModel[]>([]);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
     // // // Funcion asincrona que devuelve los pedidos de los usuarios
     const getPedidos = async () => {
       const responsePedidos = await axios(`${URL}${API}`, {
@@ -22,15 +25,17 @@ const usePedidos = (API: string) => {
       // Valida si el estatus es correcto
       if (responsePedidos.data.status === "NOK") {
         setPedidos([]);
+        setLoading(false);
       } else {
         setPedidos(responsePedidos.data.pedidos);
+        setLoading(false);
       }
     };
 
     getPedidos();
   }, []);
 
-  return pedidos;
+  return { pedidos, setPedidos, loading };
 };
 
 export default usePedidos;

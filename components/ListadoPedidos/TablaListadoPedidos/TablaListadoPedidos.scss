@@ -12,3 +12,11 @@
   justify-items: center;
   align-items: center;
 }
+
+.centrar-listado-pedidos {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}

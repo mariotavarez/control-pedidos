@@ -5,6 +5,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "numero-listado-pedidos";
+  box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+  -webkit-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+  -moz-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+  border-radius: 5px;
 }
 
 .numero-listado-pedidos {
@@ -14,6 +18,7 @@
   grid-template-areas:
     ". titulo-listado-pedidos"
     ". table-listado-pedidos";
+  padding-top: 10px;
 }
 
 .titulo-listado-pedidos {

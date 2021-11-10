@@ -8,8 +8,11 @@ import { URL } from "../config/constants.config";
 const useComentarios = (API: string) => {
   // Comentarios
   const [comentarios, setComentarios] = useState<any[]>([]);
+  // Loading
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const getComentarios = async () => {
       const responseComentarios = await axios(`${URL}${API}`, {
         headers: {
@@ -22,8 +25,10 @@ const useComentarios = (API: string) => {
       // Valida que el estatus sea correcto
       if (responseComentarios.data.status === "NOK") {
         setComentarios([]);
+        setLoading(false);
       } else {
         setComentarios(responseComentarios.data.comentarios);
+        setLoading(false);
       }
     };
 
@@ -31,7 +36,7 @@ const useComentarios = (API: string) => {
     getComentarios();
   }, []);
 
-  return comentarios;
+  return { comentarios, loading };
 };
 
 export default useComentarios;

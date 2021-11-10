@@ -62,10 +62,9 @@ p {
   grid-area: dashboard-pedidos;
   grid-template-columns: 1fr;
   column-gap: 20px;
-  grid-template-rows: 30px 15vh auto;
+  grid-template-rows: 30px auto;
   grid-template-areas:
     ". ."
-    "estadisticas estadisticas"
     "listado-pedidos listado-pedidos";
 
   height: 100%;
@@ -92,6 +91,11 @@ p {
   display: grid;
 }
 
+.centrar-sin-datos {
+  justify-self: center;
+  align-self: center;
+}
+
 .comentarios {
   grid-area: comentarios;
   display: grid;
@@ -100,7 +104,7 @@ p {
 .table-responsive {
   overflow-x: auto;
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 170px;
 }
 
 table {

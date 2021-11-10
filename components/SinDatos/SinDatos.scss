@@ -1,0 +1,23 @@
+.container-sin-datos {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  padding: 20px;
+}
+
+.container-texto-sin-datos {
+  align-content: center;
+  background-color: $color-black-1;
+  border-radius: 6px;
+  color: $color-white-1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 30px;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+  width: 100%;
+}

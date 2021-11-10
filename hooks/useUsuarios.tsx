@@ -8,7 +8,11 @@ import { URL } from "../config/constants.config";
 const useUsuarios = (ENDPOINT: string) => {
   const [usuarios, setUsuarios] = useState<any[]>([]);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    // Cargando
+    setLoading(true);
     const getUsuarios = async () => {
       // Obtiene el resultado de usuarios registrados de manera asincrona
       const responseUsuarios = await axios(`${URL}${ENDPOINT}`, {
@@ -19,11 +23,12 @@ const useUsuarios = (ENDPOINT: string) => {
         },
       });
       setUsuarios(responseUsuarios.data.usuarios);
+      setLoading(false);
     };
     getUsuarios();
   }, []);
 
-  return usuarios;
+  return { usuarios, loading };
 };
 
 export default useUsuarios;

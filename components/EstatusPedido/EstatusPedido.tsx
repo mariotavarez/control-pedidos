@@ -5,10 +5,15 @@ import { useRef, useState } from "react";
 import useActualizacionPedido from "../../hooks/useActualizacionPedido";
 // Bootstrap
 import { Modal, Button } from "react-bootstrap";
+import useListadoPedidos from "../../hooks/useListadoPedidos";
 
-const EstatusPedido = (props: any) => {
-  // Obtiene la informacion del pedido
-  const { pedido } = props;
+const EstatusPedido = ({
+  pedido,
+  setPedidos,
+}: {
+  pedido: any;
+  setPedidos: any;
+}) => {
   // Valida si muestra el modal
   const [show, setShow] = useState(false);
   // Cerrar Modal
@@ -16,11 +21,13 @@ const EstatusPedido = (props: any) => {
   // Abrir Modal
   const handleShow = () => setShow(true);
 
-  const formRef = useRef(null);
+  const formRef: any = useRef(null);
 
   const { getResponseEstatusPedido } = useActualizacionPedido(
     "/pedidos/actualizar-pedido"
   );
+
+  const { getListadoPedidos } = useListadoPedidos();
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -35,7 +42,13 @@ const EstatusPedido = (props: any) => {
       idPedido: pedido._id,
       estatus: nuevoEstatus,
     };
-    await getResponseEstatusPedido(estatusPedido);
+    getResponseEstatusPedido(estatusPedido).then(async () => {
+      console.log("ghreighei");
+
+      const listadoPedidos = await getListadoPedidos();
+      setPedidos(listadoPedidos);
+    });
+
     handleClose();
   };
 

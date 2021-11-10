@@ -26,8 +26,6 @@ const useActualizacionPedido = (API: string) => {
       );
       // Valida si fue exitosa le peticion
       if (responseActualizacionPedido) {
-        console.log(responseActualizacionPedido);
-
         const { status, message } = responseActualizacionPedido.data;
 
         if (status === "OK") {
@@ -44,7 +42,7 @@ const useActualizacionPedido = (API: string) => {
       }
     };
     // Realiza el llamado para actualizar el estatus del pedido
-    actualizarEstatus();
+    await actualizarEstatus();
   };
 
   return {

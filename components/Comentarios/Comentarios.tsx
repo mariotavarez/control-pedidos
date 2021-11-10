@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
 // Components
 import TablaComentarios from "./TablaComentarios/TablaComentarios";
 
-const ComentariosComponent: NextPage = () => {
+const ComentariosComponent = () => {
   return (
     <div>
       <div className="comentarios-container">

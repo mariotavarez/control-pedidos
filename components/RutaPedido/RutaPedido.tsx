@@ -10,8 +10,10 @@ import GoogleMapReact from "google-map-react";
 import { KEY_MAPS } from "../../config/constants.config";
 // Components
 import MarkerMapa from "./MarkerMapa/MarkerMapa";
+// Models
+import { PedidosModel } from "../../models/Pedidos/pedidos.model";
 
-const RutaPedido = ({ pedido }) => {
+const RutaPedido = ({ pedido }: { pedido: PedidosModel }) => {
   // Crea las propiedades iniciales para mostrar el punto a donde se debe dirigir el drone
   const propiedadesIniciales = {
     center: {
@@ -53,7 +55,7 @@ const RutaPedido = ({ pedido }) => {
             <div className="mapa-pedido">
               <GoogleMapReact
                 bootstrapURLKeys={{
-                  key: { KEY_MAPS },
+                  key: KEY_MAPS,
                 }}
                 defaultCenter={propiedadesIniciales.center}
                 defaultZoom={propiedadesIniciales.zoom}

@@ -10,10 +10,14 @@ import Estadisticas from "../components/Estadisticas";
 import Pedidos from "../components/Pedidos";
 import UsuariosRegistrados from "../components/UsuariosRegistrados";
 import Comentarios from "../components/Comentarios";
+import React from "react";
+import { Spinner } from "react-bootstrap";
 
 const Dashboard: NextPage = () => {
   // Pedidos
-  const pedidos = usePedidos("/pedidos/");
+  const { pedidos, loading } = usePedidos("/pedidos/");
+
+  console.log(pedidos);
 
   return (
     <div className="main">
@@ -43,7 +47,14 @@ const Dashboard: NextPage = () => {
         <div className="dashboard">
           <div className="estadisticas">
             {/* ESTADISTICAS */}
-            <Estadisticas pedidos={pedidos} />
+            {loading ? (
+              <div className="centrar-sin-datos">
+                <Spinner animation="border" variant="primary" />
+              </div>
+            ) : (
+              <Estadisticas pedidos={pedidos} />
+            )}
+
             {/* ESTADISTICAS */}
           </div>
           <div className="usuarios-registrados">
@@ -53,7 +64,13 @@ const Dashboard: NextPage = () => {
           </div>
           <div className="pedidos">
             {/* PEDIDOS */}
-            <Pedidos pedidos={pedidos} />
+            {loading ? (
+              <div className="centrar-sin-datos">
+                <Spinner animation="border" variant="primary" />
+              </div>
+            ) : (
+              <Pedidos pedidos={pedidos} />
+            )}
             {/* PEDIDOS */}
           </div>
           <div className="comentarios">

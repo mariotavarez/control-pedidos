@@ -33,7 +33,7 @@ const PedidosComponent: NextPage = () => {
         {/* DASHBOARD */}
         <div className="dashboard-pedidos">
           <div className="estadisticas"></div>
-          <div className="istado-pedidos">
+          <div className="listado-pedidos">
             <ListadoPedidos />
           </div>
         </div>

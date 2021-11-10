@@ -16,3 +16,11 @@
   cursor: pointer;
   border: 1px solid $color-black-1;
 }
+
+.centrar-sin-datos {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}

@@ -29,7 +29,6 @@ const DetalleComentarios = (props: any) => {
         </Modal.Header>
         <Modal.Body>
           <div className="container-detalle-comentarios">
-            <p>Comentarios:</p>
             <p>{`${comentarios.comentariosPedido.comentarios}`}</p>
           </div>
         </Modal.Body>
