@@ -64,25 +64,32 @@ const EstatusPedido = ({
 
       <Modal
         show={show}
+        centered={true}
+        scrollable={true}
+        fullscreen={true}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Cambio de estatus</Modal.Title>
+          <Modal.Title>
+            <p className="titulo-detalle-estatus">
+              Cambio de estatus de pedido{" "}
+            </p>{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="estatus-pedido">
             <form ref={formRef}>
               {/* ESTATUS ACTUAL */}
               <div className="form-group">
-                <label className="label-login" htmlFor="correo">
+                <label className="label-estatus" htmlFor="correo">
                   Estatus actual
                 </label>
                 <select
                   name="estatusActual"
                   id="estatusActual"
-                  className="input-login"
+                  className="input-estatus"
                 >
                   <option disabled value={pedido.estatus}>
                     {pedido.estatus}
@@ -92,13 +99,13 @@ const EstatusPedido = ({
               {/* ESTATUS ACTUAL */}
               {/* NUEVO ESTATUS */}
               <div className="form-group">
-                <label className="label-login" htmlFor="password">
+                <label className="label-estatus" htmlFor="password">
                   Nuevo estatus
                 </label>
                 <select
                   name="nuevoEstatus"
                   id="nuevoEstatus"
-                  className="input-login"
+                  className="input-estatus"
                 >
                   <option value="">Seleccione un opción</option>
                   <option value="VOLANDO A TU DOMICILIO">
@@ -112,10 +119,10 @@ const EstatusPedido = ({
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" size="lg" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button variant="dark" onClick={handleSubmit}>
+          <Button variant="dark" size="lg" onClick={handleSubmit}>
             Confirmar
           </Button>
         </Modal.Footer>

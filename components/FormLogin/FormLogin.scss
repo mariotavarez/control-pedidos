@@ -1,10 +1,23 @@
 .container-form {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30vh auto;
+  grid-template-rows: 15vh 20vh auto;
   grid-template-areas:
+    "logo"
     "encabezados"
     "formulario";
+}
+
+.logo {
+  display: grid;
+  grid-area: logo;
+  justify-items: center;
+  align-items: center;
+}
+
+.logo img {
+  height: auto;
+  width: 40%;
 }
 
 .encabezados {
@@ -22,7 +35,7 @@
   display: grid;
   font-weight: bold;
   grid-area: bienvenido;
-  font-size: 50px;
+  font-size: 45px;
   color: $color-black-1;
 }
 
@@ -83,10 +96,23 @@
   .container-form {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30vh auto;
+    grid-template-rows: 15vh 25vh auto;
     grid-template-areas:
+      "logo"
       "encabezados"
       "formulario";
+  }
+
+  .logo {
+    display: grid;
+    grid-area: logo;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .logo img {
+    height: auto;
+    width: 50%;
   }
 
   .encabezados {

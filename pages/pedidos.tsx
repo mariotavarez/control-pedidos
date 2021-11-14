@@ -4,7 +4,8 @@ import Head from "next/head";
 // Components
 import { NavbarComponent, SidebarComponent } from "../layouts";
 import ListadoPedidos from "../components/ListadoPedidos";
-
+// Bootstrap
+import NavbarMobile from "../layouts/NavbarMobile/NavbarMobile";
 const PedidosComponent: NextPage = () => {
   return (
     <div className="main">
@@ -25,6 +26,11 @@ const PedidosComponent: NextPage = () => {
           <SidebarComponent />
         </div>
         {/* SIDEBAR */}
+        {/* NAVBAR MOBILE */}
+        <div className="navbar-mobile">
+          <NavbarMobile />
+        </div>
+        {/* NAVBAR MOBILE */}
         {/* NAVBAR */}
         <div className="navbar-dashboard-pedidos">
           <NavbarComponent />

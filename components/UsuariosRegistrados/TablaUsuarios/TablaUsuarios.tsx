@@ -1,6 +1,10 @@
 import type { NextPage } from "next";
 import React from "react";
 import { Spinner } from "react-bootstrap";
+// Bootstrap
+import BootstrapTable from "react-bootstrap-table-next";
+// Pagination Factory
+import paginationFactory from "react-bootstrap-table2-paginator";
 // Hooks
 import useUsuarios from "../../../hooks/useUsuarios";
 import SinDatos from "../../SinDatos/SinDatos";
@@ -8,6 +12,36 @@ import SinDatos from "../../SinDatos/SinDatos";
 const TablaUsuarios: NextPage = () => {
   // Estado de usuarios que se mostrara en la tabla
   const { usuarios, loading } = useUsuarios("/usuarios/");
+
+  const items = [];
+  for (const usuario of usuarios) {
+    items.push({
+      id: usuario._id,
+      usuario: `${usuario.nombres} ${usuario.apellidoPaterno}`,
+      direccion: `${usuario.calle} ${usuario.noExt} ${usuario.noInt}`,
+      correo: `${usuario.correo}`,
+    });
+  }
+
+  const columns = [
+    {
+      dataField: "id",
+      text: "Id",
+      sort: true,
+    },
+    {
+      dataField: "usuario",
+      text: "Usuario",
+    },
+    {
+      dataField: "direccion",
+      text: "Dirección",
+    },
+    {
+      dataField: "correo",
+      text: "Correo",
+    },
+  ];
 
   return (
     <div>
@@ -23,30 +57,13 @@ const TablaUsuarios: NextPage = () => {
       ) : (
         // SIN DATOS
         <div className="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>Usuario</th>
-                <th>Dirección</th>
-                <th>Correo</th>
-              </tr>
-            </thead>
-            <tbody>
-              {usuarios.map((usuario) => (
-                <tr key={usuario._id}>
-                  {/* USUARIO */}
-                  <td>{`${usuario.nombres} ${usuario.apellidoPaterno}`}</td>
-                  {/* USUARIO */}
-                  {/* DIRECCION */}
-                  <td>{`${usuario.calle} ${usuario.noExt} ${usuario.noInt}`}</td>
-                  {/* DIRECCION */}
-                  {/* CORREO */}
-                  <td>{usuario.correo}</td>
-                  {/* CORREO */}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <BootstrapTable
+            bootstrap4
+            keyField="id"
+            data={items}
+            columns={columns}
+            pagination={paginationFactory({ sizePerPage: 10 })}
+          />
         </div>
       )}
     </div>

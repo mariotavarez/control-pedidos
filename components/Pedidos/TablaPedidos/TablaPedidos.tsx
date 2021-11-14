@@ -31,12 +31,10 @@ const TablaPedidos = (props: any) => {
     {
       dataField: "direccion",
       text: "Dirección",
-      // sort: true,
     },
     {
       dataField: "estatus",
       text: "Estatus",
-      // sort: true,
     },
     {
       dataField: "acciones",
@@ -57,7 +55,7 @@ const TablaPedidos = (props: any) => {
             keyField="id"
             data={items}
             columns={columns}
-            pagination={paginationFactory({ sizePerPage: 5 })}
+            pagination={paginationFactory({ sizePerPage: 10 })}
           />
         </div>
       )}

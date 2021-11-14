@@ -38,3 +38,47 @@
   justify-self: center;
   align-self: center;
 }
+
+@media screen and (max-width: 1400px) {
+  .container-navbar {
+    background-color: $color-white-1;
+    height: auto;
+    border: 0.1px solid $color-gray-1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .navbar-info {
+    display: grid;
+    grid-template-columns: 200px 500px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "navbar-imagen navbar-nombre";
+  }
+
+  .navbar-nombre {
+    grid-area: navbar-nombre;
+    justify-self: center;
+    align-self: center;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-imagen {
+    align-self: center;
+    grid-area: navbar-imagen;
+    height: 130px;
+    justify-self: center;
+    width: 130px;
+  }
+
+  .img-navbar {
+    border-radius: 100%;
+    border: 1px solid $color-gray-1;
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+  }
+}

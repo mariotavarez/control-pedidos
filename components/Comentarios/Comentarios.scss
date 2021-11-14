@@ -29,3 +29,37 @@
 .table-comentarios {
   grid-area: table-comentarios;
 }
+
+@media screen and (max-width: 1400px) {
+  .comentarios-container {
+    display: grid;
+    height: auto;
+    background-color: $color-white-1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "numero-comentarios";
+    box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -webkit-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -moz-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    border-radius: 5px;
+  }
+
+  .numero-comentarios {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "titulo-comentarios"
+      "table-comentarios";
+    padding: 20px;
+  }
+
+  .titulo-comentarios {
+    grid-area: titulo-comentarios;
+    font-size: 50px;
+  }
+
+  .table-comentarios {
+    grid-area: table-comentarios;
+  }
+}

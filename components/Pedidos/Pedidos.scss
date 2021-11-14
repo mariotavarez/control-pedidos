@@ -29,3 +29,37 @@
 .table-pedidos {
   grid-area: table-pedidos;
 }
+
+@media screen and (max-width: 1400px) {
+  .pedidos-container {
+    display: grid;
+    height: auto;
+    background-color: $color-white-1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "numero-pedidos";
+    box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -webkit-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -moz-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    border-radius: 5px;
+  }
+
+  .numero-pedidos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "titulo-pedidos"
+      "table-pedidos";
+    padding: 20px;
+  }
+
+  .titulo-pedidos {
+    grid-area: titulo-pedidos;
+    font-size: 50px;
+  }
+
+  .table-pedidos {
+    grid-area: table-pedidos;
+  }
+}

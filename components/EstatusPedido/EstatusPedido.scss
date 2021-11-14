@@ -5,3 +5,25 @@
 .btn-estatus-pedido:hover {
   background-color: $color-yellow-2 !important;
 }
+
+@media screen and (max-width: 1400px) {
+  .titulo-detalle-estatus {
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  .label-estatus {
+    font-size: 50px;
+    color: $color-black-2;
+  }
+
+  .input-estatus {
+    padding: 100px 100px;
+    height: 130px;
+    font-size: 60px;
+    border: none;
+    border-bottom: 1px solid $color-black-2;
+    padding: 5px 10px;
+    outline: none;
+  }
+}

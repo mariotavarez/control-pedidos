@@ -136,3 +136,125 @@ a {
 a:hover {
   color: $color-yellow-1;
 }
+.navbar-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .container-dashboard {
+    background-color: $color-white-2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar-mobile"
+      "navbar-dashboard"
+      "dashboard";
+  }
+
+  .navbar-mobile {
+    display: grid;
+    grid-template-areas: navbar-mobile;
+  }
+
+  .dashboard {
+    display: grid;
+    grid-area: dashboard;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 20px;
+    grid-template-areas:
+      "."
+      "estadisticas"
+      "usuarios-registrados"
+      "pedidos"
+      "comentarios";
+  }
+
+  .container-listado-pedidos {
+    background-color: $color-white-2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar-mobile"
+      "navbar-dashboard-pedidos"
+      "dashboard-pedidos";
+  }
+
+  .dashboard-pedidos {
+    display: grid;
+    grid-area: dashboard-pedidos;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    grid-template-rows: 30px auto;
+    grid-template-areas:
+      "."
+      "listado-pedidos";
+
+    height: 100%;
+    padding: 0 40px 0 40px;
+  }
+
+  .table-responsive {
+    // overflow-x: auto;
+    // overflow-y: auto;
+    max-height: 800px;
+    table-layout: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  tr {
+    text-align: center;
+  }
+
+  th,
+  td {
+    text-align: center;
+    font-size: 35px;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: $color-purple-1;
+    color: $color-white-1;
+  }
+
+  a {
+    color: $color-white-1;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $color-yellow-1;
+  }
+
+  .btn {
+    padding: 20px 4px !important;
+    font-size: 30px !important;
+  }
+
+  .btn-lg {
+    padding: 20px 60px !important;
+    font-size: 50px !important;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar-pedidos {
+    display: none;
+  }
+
+  .navbar {
+    font-size: 50px !important;
+  }
+  a {
+    color: $color-white-1 !important;
+    text-decoration: none !important;
+  }
+}

@@ -1,9 +1,11 @@
 // Constants
+import Swal from "sweetalert2";
 import { URL } from "../../config/constants.config";
 // Models
 import { LoginModel } from "../../models/Login/login.model";
 
 export const iniciarSesionRequest = async (credenciales: LoginModel) => {
+  Swal.showLoading();
   return fetch(`${URL}/control/autenticacion/iniciar-sesion/`, {
     method: "POST",
     headers: {
@@ -13,5 +15,9 @@ export const iniciarSesionRequest = async (credenciales: LoginModel) => {
       correo: credenciales.correo,
       password: credenciales.password,
     }),
-  }).then((res) => res.json());
+  }).then((res) => {
+    Swal.hideLoading();
+    Swal.close();
+    return res.json();
+  });
 };

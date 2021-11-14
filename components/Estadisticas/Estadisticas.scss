@@ -42,3 +42,53 @@
   grid-template-columns: 1fr;
   grid-template-rows: 20px 1fr;
 }
+
+@media screen and (max-width: 1400px) {
+  .container-estadisticas {
+    display: grid;
+    height: auto;
+    background-color: $color-white-1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "numeros-estadisticas";
+    box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -webkit-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -moz-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    border-radius: 5px;
+  }
+
+  .numeros-estadisticas {
+    display: grid;
+    grid-area: numeros-estadisticas;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+    grid-template-areas: "total-pedidos pedidos-espera pedidos-atendidos";
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .total-pedidos {
+    display: grid;
+    grid-area: total-pedidos;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 40px;
+  }
+
+  .pedidos-espera {
+    display: grid;
+    grid-area: pedidos-espera;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 40px;
+  }
+
+  .pedidos-atendidos {
+    display: grid;
+    grid-area: pedidos-atendidos;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 40px;
+  }
+}

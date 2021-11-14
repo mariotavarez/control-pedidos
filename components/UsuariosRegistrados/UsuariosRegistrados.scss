@@ -29,3 +29,37 @@
 .table-usuarios-registrados {
   grid-area: table-usuarios-registrados;
 }
+
+@media screen and (max-width: 1400px) {
+  .usuarios-registrados-container {
+    display: grid;
+    height: auto;
+    background-color: $color-white-1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "numero-usuarios-registrados";
+    box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -webkit-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    -moz-box-shadow: 3px 7px 12px 0px $color-black-rgba-1;
+    border-radius: 5px;
+  }
+
+  .numero-usuarios-registrados {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "titulo-usuarios-registrados"
+      "table-usuarios-registrados";
+    padding: 20px;
+  }
+
+  .titulo-usuarios-registrados {
+    grid-area: titulo-usuarios-registrados;
+    font-size: 50px;
+  }
+
+  .table-usuarios-registrados {
+    grid-area: table-usuarios-registrados;
+  }
+}

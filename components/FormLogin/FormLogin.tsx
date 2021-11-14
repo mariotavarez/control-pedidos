@@ -5,10 +5,9 @@ import Router from "next/router";
 import { LoginModel } from "../../models/Login/login.model";
 // Hooks
 import { useForm } from "../../hooks/useForm";
+import useAlert from "../../hooks/useAlert";
 // Request
 import { iniciarSesionRequest } from "../../request/Login/Login.request";
-// SweetAlert
-import Swal from "sweetalert2";
 // Credenciales del usuario
 const credenciales: LoginModel = {
   correo: "",
@@ -44,13 +43,11 @@ const FormLogin: NextPage = () => {
         localStorage.setItem("token", responseInicioSesion.token);
         return Router.replace("/dashboard");
       } else {
-        Swal.fire({
-          title: "Credenciales incorrectas",
-          text: responseInicioSesion.message,
-          icon: "info",
-          confirmButtonText: "Aceptar",
-          timer: 7000,
-        });
+        useAlert(
+          "error",
+          "Credenciales incorrectas",
+          responseInicioSesion.message
+        );
       }
     }
   }
@@ -58,6 +55,14 @@ const FormLogin: NextPage = () => {
   return (
     <div>
       <div className="container-form">
+        {/* LOGO */}
+        <div className="logo">
+          <img
+            src="https://control-pedidos.s3.us-east-2.amazonaws.com/general/logo-negro.png"
+            alt="logo"
+          />
+        </div>
+        {/* LOGO */}
         {/* ENCABEZADOS */}
         <div className="encabezados">
           <p className="bienvenido">Bienvenido de vuelta</p>

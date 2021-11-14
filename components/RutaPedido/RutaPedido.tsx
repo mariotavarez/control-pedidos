@@ -43,12 +43,17 @@ const RutaPedido = ({ pedido }: { pedido: PedidosModel }) => {
       <Modal
         show={show}
         size="lg"
+        centered={true}
+        scrollable={true}
+        fullscreen={true}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Ruta del Pedido</Modal.Title>
+          <Modal.Title>
+            <p className="titulo-detalle-ruta">Ruta del Pedido </p>{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="container-ruta-pedido">
@@ -75,16 +80,11 @@ const RutaPedido = ({ pedido }: { pedido: PedidosModel }) => {
               <p>
                 <strong> Longitud: </strong> {pedido.longitud}
               </p>
-              <div>
-                <button className="btn-generar-ruta" onClick={handleSubmit}>
-                  Generar ruta
-                </button>
-              </div>
             </div>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" size="lg" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>

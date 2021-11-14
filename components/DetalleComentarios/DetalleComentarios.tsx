@@ -21,11 +21,16 @@ const DetalleComentarios = (props: any) => {
       <Modal
         show={show}
         onHide={handleClose}
+        centered={true}
+        scrollable={true}
+        fullscreen={true}
         backdrop="static"
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Comentarios</Modal.Title>
+          <Modal.Title>
+            <p className="titulo-detalle-comentarios">Comentarios</p>{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="container-detalle-comentarios">
@@ -33,7 +38,7 @@ const DetalleComentarios = (props: any) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" size="lg" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>

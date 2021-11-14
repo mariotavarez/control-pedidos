@@ -12,6 +12,7 @@ import UsuariosRegistrados from "../components/UsuariosRegistrados";
 import Comentarios from "../components/Comentarios";
 import React from "react";
 import { Spinner } from "react-bootstrap";
+import NavbarMobile from "../layouts/NavbarMobile/NavbarMobile";
 
 const Dashboard: NextPage = () => {
   // Pedidos
@@ -38,6 +39,11 @@ const Dashboard: NextPage = () => {
           <SidebarComponent />
         </div>
         {/* SIDEBAR */}
+        {/* NAVBAR MOBILE */}
+        <div className="navbar-mobile">
+          <NavbarMobile />
+        </div>
+        {/* NAVBAR MOBILE */}
         {/* NAVBAR */}
         <div className="navbar-dashboard">
           <NavbarComponent />
@@ -45,8 +51,8 @@ const Dashboard: NextPage = () => {
         {/* NAVBAR */}
         {/* DASHBOARD */}
         <div className="dashboard">
+          {/* ESTADISTICAS */}
           <div className="estadisticas">
-            {/* ESTADISTICAS */}
             {loading ? (
               <div className="centrar-sin-datos">
                 <Spinner animation="border" variant="primary" />
@@ -54,9 +60,8 @@ const Dashboard: NextPage = () => {
             ) : (
               <Estadisticas pedidos={pedidos} />
             )}
-
-            {/* ESTADISTICAS */}
           </div>
+          {/* ESTADISTICAS */}
           <div className="usuarios-registrados">
             {/* USUARIOS REGISTRADOS */}
             <UsuariosRegistrados />

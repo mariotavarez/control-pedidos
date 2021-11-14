@@ -19,12 +19,17 @@ const DetallePedidos = (props: any) => {
 
       <Modal
         show={show}
+        centered={true}
+        scrollable={true}
+        fullscreen={true}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Detalle del pedido</Modal.Title>
+          <Modal.Title>
+            <p className="titulo-detalle-pedido">Detalle del pedido </p>{" "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="container-detalle-pedidos">
@@ -65,7 +70,7 @@ const DetallePedidos = (props: any) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" size="lg" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>
