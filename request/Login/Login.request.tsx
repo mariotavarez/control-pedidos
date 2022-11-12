@@ -5,7 +5,7 @@ import { URL } from "../../config/constants.config";
 import { LoginModel } from "../../models/Login/login.model";
 
 export const iniciarSesionRequest = async (credenciales: LoginModel) => {
-  Swal.showLoading();
+  Swal.showLoading(Swal.getDenyButton());
   return fetch(`${URL}/control/autenticacion/iniciar-sesion/`, {
     method: "POST",
     headers: {

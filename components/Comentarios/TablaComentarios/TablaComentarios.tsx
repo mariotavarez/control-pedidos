@@ -13,7 +13,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import SinDatos from "../../SinDatos/SinDatos";
 import { Pagination, Spinner } from "react-bootstrap";
 
-const TablaComentarios: NextPage = () => {
+const TablaComentarios = () => {
   // Obtiene el listado de comentarios de los usuarios
   const { comentarios, loading } = useComentarios("/pedidos/comentarios/");
 

@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 // Components
 import TablaUsuarios from "./TablaUsuarios/TablaUsuarios";
 
-const UsuariosRegistradosComponent: NextPage = () => {
+const UsuariosRegistradosComponent = () => {
   return (
     <div>
       <div className="usuarios-registrados-container">

@@ -14,7 +14,7 @@ const credenciales: LoginModel = {
   password: "",
 };
 
-const FormLogin: NextPage = () => {
+const FormLogin = () => {
   const { onChange, onSubmit, values } = useForm(iniciarSesion, credenciales);
 
   /**

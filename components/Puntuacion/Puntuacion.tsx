@@ -11,7 +11,7 @@ const Puntuacion = (props: any) => {
   for (let index = 1; index <= puntuacion; index++) {
     estrellas.push(
       <div key={index}>
-        <FontAwesomeIcon icon={faStar} />
+        <FontAwesomeIcon icon={"star"} />
       </div>
     );
   }

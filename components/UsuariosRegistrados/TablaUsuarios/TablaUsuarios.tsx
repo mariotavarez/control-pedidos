@@ -9,7 +9,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import useUsuarios from "../../../hooks/useUsuarios";
 import SinDatos from "../../SinDatos/SinDatos";
 
-const TablaUsuarios: NextPage = () => {
+const TablaUsuarios = () => {
   // Estado de usuarios que se mostrara en la tabla
   const { usuarios, loading } = useUsuarios("/usuarios/");
 

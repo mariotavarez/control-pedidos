@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-const MarkerMapa: NextPage = () => {
+const MarkerMapa = () => {
   return (
     <div>
       <img

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-const NavbarComponent: NextPage = () => {
+const NavbarComponent = () => {
   // const nombre = localStorage.getItem("nombre");
   // const imagen = localStorage.getItem("imagen")?.toString();
   return (
