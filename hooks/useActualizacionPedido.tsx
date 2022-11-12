@@ -20,7 +20,7 @@ const useActualizacionPedido = (API: string) => {
           headers: {
             "Content-Type": "application/json",
             "x-auth-token":
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImNvcnJlbyI6Im1hcmlvdGF2YXJlekBmbHl6ei5pbmZvIiwiY3JlYXRlQXQiOiIyMDIxLTEwLTI5VDAyOjM2OjMzLjY2OVoiLCJzdWJqZWN0IjoiSU5JQ0lPX1NFU0lPTiJ9LCJpYXQiOjE2MzU0NzQ5OTMsImV4cCI6MTYzODA2Njk5M30.UlkE0JtYkrXeDJ9i02mx5qZL-msbuJRJjXzzpmXgHHs",
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImNvcnJlbyI6Im1hcmlvam9zdWVpdHFAZ21haWwuY29tIiwiY3JlYXRlQXQiOiIyMDIyLTExLTEyVDE1OjUwOjIxLjA0N1oiLCJzdWJqZWN0IjoiSU5JQ0lPX1NFU0lPTiJ9LCJpYXQiOjE2NjgyNjgyMjEsImV4cCI6MTY3MDg2MDIyMX0.60XHq1ArSAsJRm0_uxAsVkVZ5fke1u48dLzDj6JWEbI",
           },
         }
       );
